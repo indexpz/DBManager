@@ -6,6 +6,12 @@ COLLATE utf8mb4_unicode_ci;
 ROLLBACK ;
 COMMIT ;
 
+#Backup bazy danych db_manager
+# mysqldump -u [user_name] -p [database_name] > [file].sql
+# mysqldump -u root -p db_manager > db_manager_backup.sql
+
+
+
 BEGIN;
 CREATE TABLE users
 (id INT AUTO_INCREMENT,
