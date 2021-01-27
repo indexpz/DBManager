@@ -13,8 +13,8 @@ public class UserDao extends User {
     }
 
     public User create (User user) {
-        PreparedStatement preStmt =  conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-user.getName() = CREATE_USER_QUERY.
+//        PreparedStatement preStmt =  conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+//user.getName() = CREATE_USER_QUERY.
         return user;
     }
 
