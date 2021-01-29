@@ -44,6 +44,31 @@ public class DBUtil {
     }
 
 
+    public static void remove(Connection conn, String tableName, int id) {
+        final String DELETE_QUERY = "DELETE FROM tableName WHERE id = ?;";
+        try (PreparedStatement preparedStatement = conn.prepareStatement(DELETE_QUERY.replace("tableName", tableName))) {
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            throw new RuntimeException("Nie udało połączyć się z bazą danych. " + ex);
+        }
+    }
+
+    /*public static void update(Connection conn, String query, String... params) {
+        final String UPDATE_QUERY = "UPDATE tableName WHERE id = ?;";
+
+        try (PreparedStatement prepareStatement = conn.prepareStatement(query)) {
+            for (int i = 0; i < params.length; i++) {
+                prepareStatement.setString(i + 1, params[i]);
+            }
+            prepareStatement.executeUpdate();
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            throw new RuntimeException("Nie udało połączyć się z bazą danych. " + ex);
+        }
+    }*/
 
 
 //    public static void insertIntoUsers(Connection conn, String name, String password, String email) {

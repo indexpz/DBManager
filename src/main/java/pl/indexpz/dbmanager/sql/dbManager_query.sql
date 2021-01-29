@@ -41,6 +41,7 @@ DELETE FROM users WHERE id = '4';
 
 SELECT * FROM users where email LIKE 'jan@wp.pl';
 
-SELECT CASE WHEN EXISTS(SELECT * FROM users WHERE  email  LIKE 'jan@wp.pl') THEN CAST (1 AS BIT) ELSE CAST (0 AS BIT) END;
 
 SELECT email FROM users HAVING email = 'jan@wp.pl';
+
+SELECT id FROM users where  name LIKE  + 'Barbara';

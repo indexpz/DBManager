@@ -21,6 +21,10 @@ public class User {
         this.email = email;
     }
 
+    protected void setId(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }
