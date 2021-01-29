@@ -31,3 +31,16 @@ COMMIT ;
 INSERT  INTO  users ( name, password, email) VALUES (?,?,?);
 
 SELECT  * FROM users;
+
+
+SELECT name, password, email FROM users WHERE id = 2;
+
+UPDATE users SET name = 'Beata', password = 'sniezka', email='beata@gmial.com' WHERE id = '4';
+
+DELETE FROM users WHERE id = '4';
+
+SELECT * FROM users where email LIKE 'jan@wp.pl';
+
+SELECT CASE WHEN EXISTS(SELECT * FROM users WHERE  email  LIKE 'jan@wp.pl') THEN CAST (1 AS BIT) ELSE CAST (0 AS BIT) END;
+
+SELECT email FROM users HAVING email = 'jan@wp.pl';
